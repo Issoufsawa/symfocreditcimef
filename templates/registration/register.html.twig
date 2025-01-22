@@ -77,14 +77,25 @@
 
     {{ form_errors(registrationForm) }}
 
-        {{ form_row(registrationForm.email) }}
+        {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.email, {'attr': {'class': 'form-control'}}) }}
+        
         {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
+            label: 'Password',
+            'attr': {'class': 'form-control'}
         }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+        
+        {{ form_row(registrationForm.nom, {'attr': {'class': 'form-control'}}) }}
+        
+        {{ form_row(registrationForm.prenom, {'attr': {'class': 'form-control'}}) }}
 
-        <button type="submit" class="btn">Register</button
-       
+        {{ form_row(registrationForm.contact, {'attr': {'class': 'form-control'}}) }}
+
+        {{ form_row(registrationForm.fonction, {'attr': {'class': 'form-control'}}) }}
+
+        {{ form_row(registrationForm.roles, {'attr': {'class': 'form-control'}}) }}
+
+        <button type="submit" class="btn">Save</button>
        
         {{ form_end(registrationForm) }}
 </div>

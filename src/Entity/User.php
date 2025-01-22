@@ -9,7 +9,6 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
-#[ORM\UniqueConstraint(name: 'UNIQ_IDENTIFIER_EMAIL', fields: ['email'])]
 #[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
@@ -18,14 +17,25 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 180)]
+    #[ORM\Column(length: 180, unique: true)]
     private ?string $email = null;
 
-    /**
-     * @var list<string> The user roles
-     */
     #[ORM\Column]
     private array $roles = [];
+
+    #[ORM\Column(type: 'string', length: 255)]
+    private ?string $nom = null;
+
+    #[ORM\Column(type: 'string', length: 255)]
+    private ?string $prenom = null;
+
+    #[ORM\Column(type: 'integer', length: 255)]
+    private ?int $contact = null;
+
+
+    #[ORM\Column(type: 'string', length: 255)]
+    private ?string $fonction = null;
+
 
     /**
      * @var string The hashed password
@@ -49,7 +59,51 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
+ 
+    public function getNom(): ?string
+    {
+        return $this->nom;
+    }
 
+    public function getPrenom(): ?string
+    {
+        return $this->prenom;
+    }
+    public function getContact(): ?int
+    {
+        return $this->contact;
+    }
+    public function getFonction(): ?string
+    {
+        return $this->fonction;
+    }
+
+    public function setNom(string $nom): static
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    public function setPrenom(string $prenom): static
+    {
+        $this->prenom = $prenom;
+
+        return $this;
+    }
+    public function setFonction(string $fonction): static
+    {
+        $this->fonction = $fonction;
+
+        return $this;
+    }
+    public function setContact(int $contact): static
+    {
+        $this->contact = $contact;
+
+        return $this;
+    }
+    
     /**
      * A visual identifier that represents this user.
      *
@@ -62,21 +116,16 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @see UserInterface
-     *
-     * @return list<string>
      */
     public function getRoles(): array
     {
         $roles = $this->roles;
         // guarantee every user at least has ROLE_USER
-        $roles[] = 'ROLE_USER';
+        // $roles[] = 'ROLE_USER';
 
         return array_unique($roles);
     }
 
-    /**
-     * @param list<string> $roles
-     */
     public function setRoles(array $roles): static
     {
         $this->roles = $roles;
@@ -87,7 +136,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @see PasswordAuthenticatedUserInterface
      */
-    public function getPassword(): ?string
+    public function getPassword(): string
     {
         return $this->password;
     }
@@ -107,4 +156,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
     }
+
+
+
+
+    
 }
