@@ -1,0 +1,748 @@
+
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>CIMEF-CREDIT | Accueil</title>
+  <!-- <title>CreditCimef</title> -->
+  <base href="/">
+  <meta name="description" content="">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/animate.min.css">
+  <link rel="stylesheet" href="assets/fonts/flaticon.css">
+  <link rel="stylesheet" href="assets/css/boxicons.min.css"> 
+  <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="assets/css/magnific-popup.css">
+  <link rel="stylesheet" href="assets/css/nice-select.min.css">
+  <link rel="stylesheet" href="assets/css/meanmenu.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/theme-dark.css">
+  <!-- <link href="https://cimef-assurances.com/public/cimef/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  <link rel="icon" type="image/png" href="assets/images/logo2.png">
+  <style>
+    .text{
+        font-size: 20px;
+    }
+    .nav-item .nav-link:hover{
+        /* color: #E664AE !important; */
+        color: #FF9339 !important;
+    }
+    .style-titre{
+      color: #FF9339 !important;
+        /* color: #D11E83 !important; */
+    }
+    .style-b{
+      color: #FF9339 !important;
+        /* color: #D11E83 !important; */
+    }
+    .coul{
+      color: #FF9339 !important;
+        /* color: #D11E83 !important; */
+    }
+    .qui_sommes_nous{
+        margin-bottom: 50px;
+        margin-top: 50px;
+    }
+    .card_mission {
+        /* border:1px solid #E664AE; */
+        border:1px solid #FF9339;
+        border-radius: 5px;
+        /* background-color: #E664AE; */
+        background-color: #FF9339;
+        color: #fff;
+        margin-left: 0px !important; 
+        padding: 0px !important; 
+        height: 60px; position: relative;
+    }
+    .card_missions{
+        height: 55px;
+        padding-left: 5px; 
+        border-radius: 5px;
+        margin: 0px !important;
+        padding-top: 5px !important; 
+    }
+    .logo_footer{
+        width: 160px;
+        height: 70px;
+    }
+    .back_contact{
+        height: 250px; 
+        position: relative;
+        z-index: 1;
+        padding-top: -50px;
+        background: linear-gradient(to right, rgba(116, 116, 116, 0.87), #ffffff),
+        url('../../../assets/images/contact_2.png');
+        background-position: -10px;
+        background-size: 50%; 
+        background-repeat: no-repeat;
+        overflow: hidden; /* Empêche l'image de dépasser les limites */
+        /* background-image: url(assets/images/contact_2.png); */
+    }
+    .back_contact img {
+        position: relative; /* Positionnement par rapport au conteneur */
+        top: 0 !important;
+        left:0;
+        margin-top: -150px;
+        margin-left: -150 !important;
+        width: 100%; /* Ajustez selon vos besoins */
+        height: auto; /* S'assure que l'image prend toute la hauteur */
+        object-fit: cover; /* Maintient les proportions de l'image */
+        z-index: 2; /* Place l'image au-dessus du dégradé */
+    }
+    .owl-carousel{
+      display: block !important;
+    }
+    .back_actu{
+        height: 250px; 
+        position: relative;
+        z-index: 1;
+        padding-top: -50px;
+        background: linear-gradient(to right, rgba(116, 116, 116, 0.87), #ffffff),
+        url('../../../assets/actualites/actu_3.jpg');
+        background-position: -10px;
+        background-size: 50%; 
+        background-repeat: no-repeat;
+        overflow: hidden; /* Empêche l'image de dépasser les limites */
+        /* background-image: url(assets/images/contact_2.png); */
+    }
+    .back_actu img {
+        position: relative; /* Positionnement par rapport au conteneur */
+        top: 0 !important;
+        left:0;
+        margin-top: -150px;
+        margin-left: -150 !important;
+        width: 100%; /* Ajustez selon vos besoins */
+        height: 650px; /* S'assure que l'image prend toute la hauteur */
+        object-fit: cover; /* Maintient les proportions de l'image */
+        z-index: 2; /* Place l'image au-dessus du dégradé */
+    }
+    select{
+        display: block !important;
+    }
+    .nice-select{
+        display: none !important;
+    }
+    .form-control{
+        height: 45px;
+    }
+    .form-select{
+        height: 45px;
+    }
+    @media (max-width: 992px) {
+      .mean-bar{
+        display: block !important;
+      }
+      .side-nav-inner{
+        margin-top: -20px;
+      }
+      .meanmenu-reveal{
+        display: block !important;
+      }
+      /* .dot-menu {
+        top: 0px !important;
+      } */
+      .style-titre{
+        margin-top: 100px;
+      }
+      .qui_sommes_nous{
+        padding-top: 0px !important;
+        margin-bottom: 20px;
+        margin-top: 20px;
+      }
+      .banner-item-content, h1{
+        height: 200px;
+        margin-top: -100px !important;
+      }
+      #slide_web{
+        top: 70px;
+        height: 300px !important;
+        margin-bottom: 50px !important;
+      }
+      .img_slide{
+        height: 300px !important; width: 100%;
+      }
+      .text{
+        font-size: 16px;
+      }.fa-2x{
+        font-size: 12px;
+      }
+      .btn-bg-two{
+
+      }
+      .default-btn{
+        background-color: #FF9339 !important;
+      }
+    }
+
+</style>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+<body>
+ <!-- Pre Loader -->
+  <!--  <div class="preloader">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="spinner"></div>
+        </div>
+    </div>
+  </div>-->
+<header class="top-header top-header-bg" style="background-color: #FF9339;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7 col-md-6">
+                <div class="top-head-left">
+                    <div class="top-contact">
+                        <h3>Support By : <a href="tel:+1(212)-255-5511">+1 (212) 255-5511</a></h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-5 col-md-6">
+                <div class="top-header-right">
+                    <div class="top-header-social">
+                        <ul>
+                            <li>
+                                <a href="https://www.facebook.com/" target="_blank">
+                                    <i class='bx bxl-facebook'></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/?lang=en" target="_blank">
+                                    <i class='bx bxl-twitter'></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/" target="_blank">
+                                    <i class='bx bxl-linkedin-square'></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/" target="_blank">
+                                    <i class='bx bxl-instagram'></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="language-list">
+                        <select class="language-list-item">
+                            <option>Français</option>
+                            <option>English</option>
+                            <option>العربيّة</option>
+                            <option>Deutsch</option>
+                            <option>Português</option>
+                            <option>简体中文</option>
+                        </select>	
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div class="navbar-area">
+    <!-- Menu For Mobile Device -->
+    <div class="mobile-nav">
+        <a href="/" class="logo">
+            <img src="assets/images/logo_cimef_credit.jpeg" class="logo-one" alt="Logo">
+            <img src="assets/images/logo_cimef_credit.jpeg" class="logo-two" alt="Logo">
+        </a>
+    </div>
+
+    <!-- Menu For Desktop Device -->
+    <div class="main-nav">
+        <div class="container">
+            <nav class="navbar navbar-expand-md navbar-light ">
+                <a class="navbar-brand" href="/">
+                    <img src="assets/images/logo_cimef_credit.jpeg" style="width: 150px; height: auto;" class="logo-one" alt="Logo">
+                    <img src="assets/images/logo_cimef_credit.jpeg" class="logo-two" alt="Logo">
+                </a>
+
+                <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                    <ul class="navbar-nav m-auto">
+                        <li class="nav-item">
+                            <a href="/quisommesnous.html" class="nav-link">
+                                Qui sommes-nous ?
+                                <!-- <i class='bx bx-caret-down'></i> -->
+                            </a>
+ 
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                Services 
+                                <i class='bx bx-caret-down'></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        Particulier
+                                        <i class='bx bx-caret-down text-light'></i>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a href="/particulier.html" class="nav-link">
+                                                Comptes
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="/credit.html" class="nav-link">
+                                                Crédits
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="/expertisecomppparti.html" class="nav-link">
+                                                Expertise comptable
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        PME
+                                        <i class='bx bx-caret-down text-light'></i>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a href="/comptepme.html" class="nav-link">
+                                                Comptes
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="/creditpme.html"class="nav-link">
+                                                Crédits
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="/expertisecomptpme.html" class="nav-link">
+                                                Expertise comptable
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/reseau.html" class="nav-link">
+                                Notre réseau
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/actualite.html" class="nav-link">
+                                Actualités
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                Simulateurs
+                                <i class='bx bx-caret-down'></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item">
+                                    <a href="/simulateurdepret.html" class="nav-link">
+                                        Simulateur de prêt
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/simulateurdat.html" class="nav-link">
+                                        Simulateur DAT
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/contact.html" class="nav-link">
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="nav-side d-display">
+                        <div class="nav-side-item">
+                            <div class="get-btn">
+                                <a href="/devenirclient.html" class="default-btn btn-bg-two border-radius-50">Devenir Client <i class='bx bx-chevron-right'></i></a>
+                            </div>	
+                        </div>
+                    </div>
+                </div>
+
+            </nav>
+        </div>
+    </div>
+
+    <div class="side-nav-responsive">
+        <div class="container-max">
+            <div class="dot-menu">
+                <div class="circle-inner">
+                    <div class="in-circle circle-one"></div>
+                    <div class="in-circle circle-two"></div>
+                    <div class="in-circle circle-three"></div>
+                </div>
+            </div>
+            
+            <div class="container">
+                <div class="side-nav-inner">
+                    <div class="side-nav justify-content-center align-items-center">
+                        <div class="side-nav-item nav-side">
+                            <div class="search-box">
+                                <i class='bx bx-search'></i>
+                            </div>
+                            <div class="get-btn">
+                                <a href="/devenirclient.html" class="default-btn btn-bg-two border-radius-50">Devenir Client <i class='bx bx-chevron-right'></i></a>
+                            </div>	
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Navbar Area -->
+
+<div class="call-us-area back_contact">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="call-us-img">
+                    <img src="/assets/images/contact_2.png" style="height: auto;" alt="Images">
+
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="call-shape">
+                    <div class="shape1">
+                        <img src="/assets/images/call-us/call-shap2.png" alt="Images">
+                    </div>
+                </div>
+                <div class="inner-title" style="margin-top: -150px !important;">
+                    <h1>Contactez-nous</h1>
+                    <ul>
+                        <li style="display: inline-block;">
+                            <a class="text-dark" href="index.html">Accueil /</a> 
+                        </li>
+                        <li class="coul" style="display: inline-block;">Contactez-nous</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container pt-100 pb-70">
+    <div class="row">
+        <div class="col-md-5 col-sm-12">
+            <div class="contact-info">
+                <span>Information</span>
+                <h2>Laissez nous un message</h2>
+                <p>
+                    Nous sommes disponibles pour toutes demandes d’informations, de suggestions ou de réclamations.
+                    Appelez le xxxxxxxxxx  ou envoyez un message via Whatsapp au xxxxxxxxx. </p>
+                <ul>
+                    <li>
+                        <div class="content">
+                            <i class='bx bx-phone-call coul'></i>
+                            <h3>Téléphone</h3> 
+                            <a href="tel:+1(212)-255-5511">+1 (212) 255-5511</a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="content">
+                            <i class='bx bxs-map coul'></i>
+                            <h3>Situation géographique</h3> 
+                            <span>124 Virgil A Virginia, USA</span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="content">
+                            <i class='bx bx-message coul'></i>
+                            <h3>Adresse mail</h3>
+                            <a href="">hello&#64;techex.com</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-7 col-sm-12">
+
+            <div class="p-4">
+                <form action="" method="post">
+                    <input type="text" id="name" name="name" class="form-control mb-3" placeholder="Nom" pattern="^[A-Za-zÀ-ÿ\s]+$" require>
+                    <input type="text" id="phone"  name="phone" class="form-control mb-3" placeholder="Téléphone" pattern="^\+?[0-9\s\-]{7,15}$" require>
+                    <input type="text"  id="email" name="email" class="form-control mb-3" placeholder="Email" require>
+                    <input type="text" id="subject" name="subject" class="form-control mb-3" placeholder="Objet" pattern="^[A-Za-zÀ-ÿ\s]+$" require>
+                    <textarea name="message" id="message" class="form-control mb-3" style="height: 200px;" pattern="^[A-Za-zÀ-ÿ\s]+$" require></textarea>
+                    <input type="submit" class="default-btn btn-bg-two border-radius-5 float-end" style="border: 1px solid white;" value="Envoyer">
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="call-us-area">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="call-contact">
+                    <a href="tel:+1(212)255-5511" class="call-btn">Pas encore client ?</a>
+                    <p class="text">Vous êtes un <b>particulier</b>, une <b>entreprise</b>, vous avec besoin <br>d'un prêt financier pour débuter ou accroitre votre activité ?</p>
+                    <a href="contact.html" class="default-btn btn-bg-two border-radius-5">Contactez-nous</a>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="call-us-img">
+                    <img src="/assets/images/contact_copie.png" alt="Images">
+                    <div class="call-shape">
+                        <div class="shape1">
+                            <img src="/assets/images/call-us/call-shap2.png" alt="Images">
+                        </div>
+
+                        <div class="shape2">
+                            <img src="/assets/images/call-us/call-shap3.png" alt="Images">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="counter-area pt-70 pb-70">
+    <div class="container">
+        <div class="row pt-45">
+            <div class="col-lg-3 col-6 col-md-3">
+                <div class="counter-another-content">
+                    <i class="fa fa-file-o coul"></i>
+                    <h3>105+</h3>
+                    <span>Projets financés</span>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-6 col-md-3">
+                <div class="counter-another-content">
+                    <i class="fa fa-map coul"></i>
+                    <h3>25+</h3>
+                    <span>Points de distribution</span>
+                </div>
+                <!-- <label class="text text-center" style="margin-top: -10px;">Répartis dans tout le district d'Abidjan</label> -->
+            </div>
+
+            <div class="col-lg-3 col-6 col-md-3">
+                <div class="counter-another-content">
+                    <i class="fa fa-user coul"></i>
+                    <h3>50+</h3>
+                    <span>Collaborateurs</span>
+                </div>
+                <!-- <label class="text text-center" style="margin-top: -10px;">Dévoués à vous donner un service de qualité</label> -->
+            </div>
+
+            <div class="col-lg-3 col-6 col-md-3">
+                <div class="counter-another-content">
+                    <i class="fa fa-users coul"></i>
+                    <h3>300+</h3>
+                    <span>Clients</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="counter-shape">
+        <div class="shape1">
+            <img src="assets/images/shape/shape1.png" alt="Images">
+        </div>
+        <div class="shape2">
+            <img src="assets/images/shape/shape2.png" alt="Images">
+        </div>
+    </div>
+</div>
+
+
+<footer class="footer-area footer-bg">
+    <div class="container">
+        <div class="footer-top pt-100 pb-70">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="footer-widget">
+                        <div class="footer-logo">
+                            <a href="index.html">
+                                <img src="assets/images/logo_cimef_credit copie_blanc.png" class="logo_footer" alt="Images">
+                            </a>
+                        </div>
+                        <p>
+                            Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auct.Aenean, 
+                            lorem quis bibendum auct. Aenean sollicitudin lorem.
+                        </p>
+                        <div>
+                            <a style="margin-right: 10px;" href="">
+                                <i class="fa fa-facebook-square fa-2x text-light"></i>
+                            </a>
+                            <a href=""><i class="fa fa-twitter-square fa-2x text-light"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-6">
+                    <div class="footer-widget pl-2">
+                        <h3>Navigation</h3>
+                        <ul class="footer-list">
+                            <li>
+                                <a href="service-details.html" target="_blank">
+                                    <i class='bx bx-chevron-right'></i>
+                                    Accueil
+                                </a>
+                            </li> 
+                            <li>
+                                <a href="service-details.html" target="_blank">
+                                    <i class='bx bx-chevron-right'></i>
+                                    Notre réseau 
+                                </a>
+                            </li> 
+                            <li>
+                                <a href="compare.html" target="_blank">
+                                    <i class='bx bx-chevron-right'></i>
+                                    Actualité   
+                                </a>
+                            </li> 
+                            <li>
+                                <a href="service-details.html" target="_blank">
+                                    <i class='bx bx-chevron-right'></i>
+                                    Simulateur de prêt      
+                                </a>
+                            </li> 
+                            <li>
+                                <a href="service-details.html" target="_blank">
+                                    <i class='bx bx-chevron-right'></i>
+                                    Simulateur de DAT   
+                                </a>
+                            </li> 
+                            <li>
+                                <a href="service-details.html" target="_blank">
+                                    <i class='bx bx-chevron-right'></i>
+                                    Contactez-nous   
+                                </a>
+                            </li> 
+                            <li>
+                                <a href="service-details.html" target="_blank">
+                                    <i class='bx bx-chevron-right'></i>
+                                    Politique de confidentialité   
+                                </a>
+                            </li> 
+                            <li>
+                                <a href="service-details.html" target="_blank">
+                                    <i class='bx bx-chevron-right'></i>
+                                    Mentions légales   
+                                </a>
+                            </li> 
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-6">
+                    <div class="footer-widget pl-5">
+                        <h3>Nos services</h3>
+                        <ul class="footer-list">
+                            <li>
+                                <a href="service-details.html" target="_blank">
+                                    <i class='bx bx-chevron-right'></i>
+                                    Ouvrir un compte  
+                                </a>
+                                <!-- <a href="blog-details.html">
+                                    <img src="assets/images/blog/blog-img-footer.jpg" alt="Images">
+                                </a>
+                                <div class="content">
+                                    <h3><a href="blog-details.html">Product Idea Solution For New Generation</a></h3>
+                                    <span>04 Dec 2024</span>
+                                </div> -->
+                            </li>
+
+                            <li>
+                                <a href="service-details.html" target="_blank">
+                                    <i class='bx bx-chevron-right'></i>
+                                    Emprunter 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="service-details.html" target="_blank">
+                                    <i class='bx bx-chevron-right'></i>
+                                    Epargner & Investir
+                                </a>
+                            </li>
+                            <li>
+                                <a href="service-details.html" target="_blank">
+                                    <i class='bx bx-chevron-right'></i>
+                                    Expertise comptable  
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-6">
+                    <div class="footer-widget">
+                        <h3>Localisation</h3>
+                        <p>Angré 7ième Tranche près des deux stations Shell.</p>
+                        <div class="newsletter-area">
+                            <p>
+                                <b>Téléhone :</b> <br>
+                                <b>Email :</b> <br>
+                            </p>
+                            <!-- <form class="newsletter-form" data-toggle="validator" method="POST">
+                                <input type="email" class="form-control" placeholder="Enter Your Email" name="EMAIL" required autocomplete="off">
+                                <button class="subscribe-btn" type="submit">
+                                    <i class='bx bx-paper-plane'></i>
+                                </button>
+                                <div id="validator-newsletter" class="form-result"></div>
+                            </form> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copy-right-area">
+            <div class="copy-right-text">
+                <p>
+                    Copyright © <script>document.write(new Date().getFullYear())</script> CIMEF CREDIT. Tous droits réservés par
+                    <a href="#" target="_blank" style="text-decoration: underline #17334b !important;" class="coul">GROUPE CIMEF</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+ <!-- Jquery Min JS -->
+ <script src="assets/js/jquery.min.js"></script>
+ <!-- Bootstrap Bundle Min JS -->
+ <script src="assets/js/bootstrap.bundle.min.js"></script>
+ <!-- Owl Carousel Min JS -->
+ <script src="assets/js/owl.carousel.min.js"></script>
+ <!-- Magnific Popup Min JS -->
+ <script src="assets/js/jquery.magnific-popup.min.js"></script>
+ <!-- Nice Select Min JS -->
+ <script src="assets/js/jquery.nice-select.min.js"></script>
+ <!-- Wow Min JS -->
+ <script src="assets/js/wow.min.js"></script>
+ <!-- Meanmenu JS -->
+ <script src="assets/js/meanmenu.js"></script>
+ <!-- Ajaxchimp Min JS -->
+ <script src="assets/js/jquery.ajaxchimp.min.js"></script>
+ <!-- Form Validator Min JS -->
+ <script src="assets/js/form-validator.min.js"></script>
+ <!-- Contact Form JS -->
+ <script src="assets/js/contact-form-script.js"></script>
+ <!-- Custom JS -->
+ <script src="assets/js/custom.js"></script>
+</body>
+</html>
