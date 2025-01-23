@@ -475,10 +475,10 @@
         <div class="col-md-7 col-sm-12">
 
             <div class="p-4">
-                <form action="" method="post">
-                    <input type="text" id="name" name="name" class="form-control mb-3" placeholder="Nom" pattern="^[A-Za-zÀ-ÿ\s]+$" require>
-                    <input type="text" id="phone"  name="phone" class="form-control mb-3" placeholder="Téléphone" pattern="^\+?[0-9\s\-]{7,15}$" require>
-                    <input type="text"  id="email" name="email" class="form-control mb-3" placeholder="Email" require>
+                <form action="{{ path('app_contacte') }}" method="post">
+                    <input type="text" id="nom" name="nom" class="form-control mb-3" placeholder="Nom" pattern="^[A-Za-zÀ-ÿ\s]+$" require>
+                    <input type="phone" id="phone"  name="phone" class="form-control mb-3" placeholder="Téléphone" pattern="^\+?[0-9\s\-]{7,15}$" require>
+                    <input type="email"  id="email" name="email" class="form-control mb-3" placeholder="Email" require>
                     <input type="text" id="subject" name="subject" class="form-control mb-3" placeholder="Objet" pattern="^[A-Za-zÀ-ÿ\s]+$" require>
                     <textarea name="message" id="message" class="form-control mb-3" style="height: 200px;" pattern="^[A-Za-zÀ-ÿ\s]+$" require></textarea>
                     <input type="submit" class="default-btn btn-bg-two border-radius-5 float-end" style="border: 1px solid white;" value="Envoyer">

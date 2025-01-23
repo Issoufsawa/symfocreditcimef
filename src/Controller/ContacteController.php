@@ -11,20 +11,20 @@ use App\Entity\Contacte;
 
 final class ContacteController extends AbstractController
 {
-    #[Route('/contacte', name: 'app_contacte')]
+    #[Route('/contacte', name: 'app_contacte', methods: ['GET', 'POST'])]
     public function index(Request $request, EntityManagerInterface $entityManager): Response
     {
 
 
         if ($request->isMethod('POST')) {
-            $name = $request->request->get('nom');
+            $nom = $request->request->get('nom');
             $email = $request->request->get('email');
             $subject = $request->request->get('subject');
             $phone = $request->request->get('phone');
             $message = $request->request->get('message');
     
             // Valider les données
-            if (empty($name) || empty($email) || empty($subject)  || empty($phone) || empty($message)) {
+            if (empty($nom) || empty($email) || empty($subject)  || empty($phone) || empty($message)) {
                 $this->addFlash('error', 'Tous les champs sont obligatoires.');
                 return $this->redirectToRoute('app_contacte');
             }
@@ -32,7 +32,7 @@ final class ContacteController extends AbstractController
             
             // Créer l'objet Appointement et assigner les données
             $contacte = new Contacte();
-            $contacte->setName($name);
+            $contacte->setName($nom);
             $contacte->setEmail($email);
             $contacte->setSubject($subject);
             $contacte->setPhone($phone);  

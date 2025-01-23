@@ -18,7 +18,7 @@ class Contacte
         message: 'Le nom ne peut contenir que des lettres.'
     )]
     #[ORM\Column(type: 'string', length: 255)]
-    private ?string $name = null;
+    private ?string $nom = null;
 
     #[ORM\Column(type: 'string', length: 255)]
     private ?string $email = null;
@@ -77,14 +77,14 @@ class Contacte
         return $this;
     }
 
-    public function getName(): ?string
+    public function getNom(): ?string
     {
-        return $this->name;
+        return $this->nom;
     }
 
-    public function setName(string $name): self
+    public function setName(string $nom): self
     {
-        $this->name = $name;
+        $this->nom = $nom;
         return $this;
     }
 
