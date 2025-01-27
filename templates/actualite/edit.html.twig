@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+        <!-- Custom fonts for this template-->
+        <link href="{{ asset('admin/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+ 
+        <!-- Custom styles for this template-->
+        <link href="{{ asset('admin/css/sb-admin-2.min.css') }}" rel="stylesheet">
+        
+<style>
+    .form-container {
+        max-width: 500px;
+        margin: 25px auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-container h1 {
+        text-align: center;
+        margin-bottom: 10px;
+        font-weight: 10;
+    }
+
+    .form-container .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-container label {
+        font-weight: 400;
+        margin-bottom: 5px;
+        display: block;
+    }
+
+    .form-container .form-control {
+        border-radius: 4px;
+        padding: 8px;
+        width: 100%;
+        border: 1px solid #ccc;
+    }
+
+    .btn {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 16px;
+        margin-top:20px
+    }
+
+    .btn:hover {
+        background-color: #0056b3;
+    }
+</style>
+    {% endblock %}
+</head>
+<body id="page-top">
+{{ include('creditcimenf_admin/includes/header.html.twig') }}
+
+
+
+{% block body %}
+<div class="container mt-5">
+    <h1>Modifier une actualite : {{ actualiteimage.titre }}</h1>
+
+    {{ form_start(form) }}
+        <div class="form-group">
+            {{ form_label(form.titre) }}
+            {{ form_widget(form.titre, { 'attr': { 'class': 'form-control' } }) }}
+        </div>
+        <div class="form-group">
+            {{ form_label(form.description) }}
+            {{ form_widget(form.description, { 'attr': { 'class': 'form-control' } }) }}
+        </div>
+        <div class="form-group">
+            {{ form_label(form.image) }}
+            {{ form_widget(form.image, { 'attr': { 'class': 'form-control' } }) }}
+        </div>
+
+        <button type="submit" class="btn btn-primary">Sauvegarder les modifications</button>
+        <a href="{{ path('app_listeactualite') }}" class="btn btn-secondary">Annuler</a>
+    {{ form_end(form) }}
+</div>
+{% endblock %}
+
+{{ include('creditcimenf_admin/includes/footer.html.twig') }}
+{% block javascripts %}
+    <!-- Bootstrap core JavaScript-->
+    <script src="{{ asset('admin/vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('admin/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="{{ asset('admin/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="{{ asset('admin/js/sb-admin-2.min.js') }}"></script>
+ 
+{% endblock %}
+</body>
+</html>
