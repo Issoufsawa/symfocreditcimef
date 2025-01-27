@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+        <!-- Custom fonts for this template-->
+        <link href="{{ asset('admin/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+ 
+        <!-- Custom styles for this template-->
+        <link href="{{ asset('admin/css/sb-admin-2.min.css') }}" rel="stylesheet">
+        
+<style>
+    .form-container {
+        max-width: 500px;
+        margin: 25px auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-container h1 {
+        text-align: center;
+        margin-bottom: 10px;
+        font-weight: 10;
+    }
+
+    .form-container .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-container label {
+        font-weight: 400;
+        margin-bottom: 5px;
+        display: block;
+    }
+
+    .form-container .form-control {
+        border-radius: 4px;
+        padding: 8px;
+        width: 100%;
+        border: 1px solid #ccc;
+    }
+
+    .btn {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 16px;
+        margin-top:20px
+    }
+
+    .btn:hover {
+        background-color: #0056b3;
+    }
+</style>
+    {% endblock %}
+</head>
+<body id="page-top">
+{{ include('creditcimenf_admin/includes/header.html.twig') }}
+
+
+
+{% block body %}
+
+<div class="container mt-5">
+    <h2 class="text-center">Liste des actualités en image</h2>
+      <div class="table-responsive">
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Titre</th>
+            <th>Description</th>
+            <th>Image</th>
+            <th scope="col">Date de publication</th>
+            <th scope="col">Modifier</th>
+             <th scope="col">Supprimer</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for actualiteimage in allactualiteimage %}
+            <tr>
+                <td>{{ loop.index + (currentPage - 1) * 10 }}</td>
+                <td>{{actualiteimage.titre }}</td>
+                <td>{{ actualiteimage.description }}</td>
+                <td> {% if actualiteimage.imagePath %}
+                            <img src="{{ asset('uploads/images/' ~ actualiteimage.imagePath) }}" alt="{{ actualiteimage.titre }}" width="100">
+                        {% else %}
+                            <p>Aucune image disponible</p>
+                        {% endif %}</td>
+                <td>{{ actualiteimage.createAd|date('d/m/Y H:i') }}</td>
+                <td><a href="{{ path('apropos_edit', { id: actualiteimage.id }) }}" class="btn btn-success">Modifier</a></td>
+                  <td>
+    <form method="post" action="{{ path('apropos_delete', { 'id': actualiteimage.id }) }}" onsubmit="return confirm('Voulez-vous vraiment supprimer cet a propos ?');">
+        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ actualiteimage.id) }}">
+        <button type="submit" class="btn btn-danger">Supprimer</button>
+    </form>
+</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+    </div>
+    
+</div>
+
+{% endblock %}
+
+<nav aria-label="Pagination">
+    <ul class="pagination justify-content-center">
+        {% if currentPage > 1 %}
+            <li class="page-item">
+                <a class="page-link" href="{{ path(app.request.attributes.get('_route'), app.request.query.all|merge({'page': currentPage - 1})) }}" aria-label="Précédent">
+                    <span aria-hidden="true">&laquo;</span> Précédent
+                </a>
+            </li>
+        {% else %}
+            <li class="page-item disabled">
+                <span class="page-link" aria-hidden="true">&laquo; Précédent</span>
+            </li>
+        {% endif %}
+
+        <li class="page-item disabled">
+            <span class="page-link">Page {{ currentPage }} sur {{ totalPages }}</span>
+        </li>
+
+        {% if currentPage < totalPages %}
+            <li class="page-item">
+                <a class="page-link" href="{{ path(app.request.attributes.get('_route'), app.request.query.all|merge({'page': currentPage + 1})) }}" aria-label="Suivant">
+                    Suivant <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        {% else %}
+            <li class="page-item disabled">
+                <span class="page-link">Suivant &raquo;</span>
+            </li>
+        {% endif %}
+    </ul>
+</nav>
+
+
+{{ include('creditcimenf_admin/includes/footer.html.twig') }}
+
+
+
+{% block javascripts %}
+    <!-- Bootstrap core JavaScript-->
+    <script src="{{ asset('admin/vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('admin/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="{{ asset('admin/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="{{ asset('admin/js/sb-admin-2.min.js') }}"></script>
+ 
+{% endblock %}
+</body>
+</html>
