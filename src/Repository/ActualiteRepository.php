@@ -40,4 +40,24 @@ class ActualiteRepository extends ServiceEntityRepository
     //            ->getOneOrNullResult()
     //        ;
     //    }
+
+
+
+    public function findFirstthree()
+    {
+        return $this->createQueryBuilder('a')
+            ->setMaxResults(3)
+            ->getQuery()
+            ->getResult();
+    }
+    
+    public function findLastFive(): array
+    {
+        return $this->createQueryBuilder('a')
+            ->orderBy('a.id', 'DESC')
+            ->setMaxResults(4)
+            ->getQuery()
+            ->getResult();
+    }
+    
 }
