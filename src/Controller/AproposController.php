@@ -135,7 +135,7 @@ final class AproposController extends AbstractController
     // Redirection vers la liste des jeux    
     return $this->redirectToRoute('app_liste_apropos');
     }
-        return $this->render('app_liste_apropos/edit.html.twig', [
+        return $this->render('apropos/edit.html.twig', [
             'form' => $form->createView(),
             'apropos' => $actuc,
         ]);
@@ -155,7 +155,7 @@ final class AproposController extends AbstractController
         if ($this->isCsrfTokenValid('delete' . $actuc->getId(), $request->request->get('_token'))) {
             $entityManager->remove($actuc);
             $entityManager->flush();
-            $this->addFlash('success', 'A propos supprimé avec succès!');
+            $this->addFlash('success','A propos supprimé avec succès!');
         }
     
         return $this->redirectToRoute('app_liste_apropos');
