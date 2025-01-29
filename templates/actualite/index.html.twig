@@ -13,67 +13,67 @@
         <!-- Custom styles for this template-->
         <link href="{{ asset('admin/css/sb-admin-2.min.css') }}" rel="stylesheet">
         
-        <style>
-            .form-container {
-                max-width: 500px;
-                margin: 25px auto;
-                padding: 20px;
-                border: 1px solid #ddd;
-                border-radius: 8px;
-                background-color: #f9f9f9;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            }
+<style>
+    .form-container {
+        max-width: 500px;
+        margin: 25px auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-            .form-container h1 {
-                text-align: center;
-                margin-bottom: 10px;
-                font-weight: 10;
-            }
+    .form-container h1 {
+        text-align: center;
+        margin-bottom: 10px;
+        font-weight: 10;
+    }
 
-            .form-container .form-group {
-                margin-bottom: 15px;
-            }
+    .form-container .form-group {
+        margin-bottom: 15px;
+    }
 
-            .form-container label {
-                font-weight: 400;
-                margin-bottom: 5px;
-                display: block;
-            }
+    .form-container label {
+        font-weight: 400;
+        margin-bottom: 5px;
+        display: block;
+    }
 
-            .form-container .form-control {
-                border-radius: 4px;
-                padding: 8px;
-                width: 100%;
-                border: 1px solid #ccc;
-            }
+    .form-container .form-control {
+        border-radius: 4px;
+        padding: 8px;
+        width: 100%;
+        border: 1px solid #ccc;
+    }
 
-            .btn {
-                background-color: #007bff;
-                color: #fff;
-                border: none;
-                padding: 10px 20px;
-                border-radius: 4px;
-                cursor: pointer;
-                width: 100%;
-                font-size: 16px;
-                margin-top:20px;
-            }
+    .btn {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 16px;
+        margin-top:20px
+    }
 
-            .btn:hover {
-                background-color: #0056b3;
-            }
-        </style>
+    .btn:hover {
+        background-color: #0056b3;
+    }
+</style>
     {% endblock %}
-    
-    <!-- Include CKEditor 4.22.1 CDN (latest stable version) -->
-    <script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
 </head>
 <body id="page-top">
 {{ include('creditcimenf_admin/includes/header.html.twig') }}
 
+
+
 {% block body %}
+
 <!-- Main Content -->
-<div class="form-container">
+  <div class="form-container">
     <h1>Ajouter une actualité</h1>
 
     {{ form_start(form) }}
@@ -88,8 +88,9 @@
         {{ form_widget(form.description) }}
     </div>
 
+   
     <div class="form-group">
-        {{ form_label(form.image) }}
+       
         {{ form_widget(form.image) }}
     </div>
 
@@ -101,6 +102,8 @@
 
 {{ include('creditcimenf_admin/includes/footer.html.twig') }}
 
+
+
 {% block javascripts %}
     <!-- Bootstrap core JavaScript-->
     <script src="{{ asset('admin/vendor/jquery/jquery.min.js') }}"></script>
@@ -111,12 +114,7 @@
 
     <!-- Custom scripts for all pages-->
     <script src="{{ asset('admin/js/sb-admin-2.min.js') }}"></script>
-
-    <!-- Initialize CKEditor 4 on the description textarea -->
-    <script>
-        // Initialize CKEditor on the description field
-        CKEDITOR.replace('{{ form.description.vars.id }}');
-    </script>
+ 
 {% endblock %}
 </body>
 </html>
